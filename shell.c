@@ -5,12 +5,9 @@
  * A command-line shell program that uses system calls to directly invoke
  * operating system services, rather than relying on C library calls.
  *
- * @author blee20@georgefox.edu
+ * @author blee20\@georgefox.edu
  */
 
-#include <sys/syscall.h>
-#include <unistd.h>
-#include <string.h>
 #include "shell.h"
 
 /**
