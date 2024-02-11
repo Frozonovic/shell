@@ -50,14 +50,19 @@ int main() {
 
         // Thought about switch statement, but what if we have built-in's sharing the same letter?
         if (strncmp(buffer, "echo", strlen("echo")) == EQUAL) {
+            // Echo command call
             prev_exit_code = shell_cmd_echo(prev_exit_code,buffer);
         } else if (strncmp(buffer, "cd", strlen("cd")) == EQUAL) {
+            // Change directory command call
             prev_exit_code = shell_cmd_chdir(buffer);
         } else if (strncmp(buffer, "pwd", strlen("pwd")) == EQUAL) {
+            // Print working directory command call
             prev_exit_code = shell_cmd_pwd(cwd);
         } else if (strcmp(buffer, EXIT) == EQUAL) {
+            // Exit process
             exit(SUCCESS);
         } else {
+            // Fork/execute non-implemented commands
             shell_cmd_exec(0, buffer);
         }
 

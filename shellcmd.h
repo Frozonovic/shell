@@ -11,9 +11,11 @@
 
 
 /**
- * Prints all following arguments to standard output
- * @param command
- * @return
+ * Prints user-input to standard output
+ *
+ * @param prev_exit_code Exit code from previous process
+ * @param command Command with args to execute
+ * @return Zero on success, else non-zero on failure
  */
 int shell_cmd_echo(int prev_exit_code, char* command);
 
@@ -37,9 +39,10 @@ int shell_cmd_chdir(char* path);
 
 
 /**
- * Fork and execute a command not built into shell
+ * Forks and executes commands not in built-in shell commands
  *
- * @param command Command "string" to fork and execute
+ * @param background Boolean for whether to run in background or not
+ * @param command Command with args to execute
  * @return Zero on success, else non-zero on failure
  */
 int shell_cmd_exec(int background, char* command);
