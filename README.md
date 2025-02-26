@@ -1,3 +1,3 @@
 # Shell
 
-Command-line shell program for built in C.
+Command-line shell program built in C.
